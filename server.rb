@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'cabocha'
+require 'sinatra/cross_origin'
 
 helpers do
   def html_safe(text)
