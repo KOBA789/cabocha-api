@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    cabocha (0.69)
+    cabocha (0.69.1)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -15,8 +15,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cabocha
+  cabocha (~> 0.69.1)
   sinatra
 
 BUNDLED WITH
-   1.10.5
+   1.11.2
