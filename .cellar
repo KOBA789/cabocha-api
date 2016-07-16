@@ -1,1 +1,2 @@
-install cabocha
+tap masawada/cabocha-without-iconv
+install cabocha-without-iconv
