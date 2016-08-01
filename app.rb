@@ -24,7 +24,7 @@ get '/cabocha.txt' do
   tree = parser.parse(params["q"].to_s)
   @result = tree.toString(CaboCha::CABOCHA_FORMAT_TREE)
 
-  content_type "plain/text", charset: "utf8"
+  content_type "text/plain", charset: "utf8"
   cross_origin
 
   @result
