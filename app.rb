@@ -8,7 +8,7 @@ helpers do
   end
 end
 
-get '/' do
+get '/cabocha.xml' do
   parser = CaboCha::Parser.new
   tree = parser.parse(params["q"].to_s)
   @result = tree.toString(CaboCha::CABOCHA_FORMAT_XML)
@@ -16,11 +16,22 @@ get '/' do
   content_type "application/xml", charset: "utf8"
   cross_origin
 
-  erb :index
+  erb :xml
+end
+
+get '/cabocha.txt' do
+  parser = CaboCha::Parser.new
+  tree = parser.parse(params["q"].to_s)
+  @result = tree.toString(CaboCha::CABOCHA_FORMAT_TREE)
+
+  content_type "plain/text", charset: "utf8"
+  cross_origin
+
+  @result
 end
 
 __END__
 
-@@index
+@@xml
 <?xml version="1.0" encoding="UTF-8"?>
 <%= @result %>
